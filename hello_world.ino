@@ -1,3 +1,5 @@
+//Jeremy Love - Assignment #13
+
 #define MASTER true //master flag
 #define THRE_LIGH true //three-light flag
 #define ITER_COND size_t i = 0; i<sizeof(pinNumbersToIterate) / sizeof(*pinNumbersToIterate);++i
