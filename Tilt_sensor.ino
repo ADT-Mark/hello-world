@@ -4,23 +4,36 @@
 //tilt switch data sheet:
     //https://www.digikey.com/en/products/detail/e-switch/TM1000Q/2541277
 
-const int ledPin = 13;// we will turn the Pin 13 light on
+//Only 50% sure will be able to tell if the sensor is tilting left or right
+//alternative is that the sensor just knows that it is tilting.
+
+const int tiltLeft = 12;
+const int tiltRight = 13;
+int tiltValue1;
+int tiltValue2;
+
 void setup()
 {
-  pinMode(ledPin,OUTPUT);
-  pinMode(2,INPUT);
-  digitalWrite(2, HIGH);
+  pinMode(tiltLeft,INPUT);
+  pinMode(tiltRight,INPUT);
+    
+  digitalWrite(TiltLeft, HIGH);
+  digitalWrite(TiltRight, HIGH);
+    
+  Serial.begin(9600);
 }
 /******************************************/
 void loop()
 {
-  int digitalVal = digitalRead(2);
-  if(HIGH == digitalVal)
+  tiltValue1 = digitalRead(tiltLeft);
+  tiltValue2 = digitalRead(tiltRight);
+  
+/*  if(HIGH == digitalVal)
   {
-    digitalWrite(ledPin,LOW);//turn the led off
+    digitalWrite(TiltLeft,LOW);
   }
   else
   {
-    digitalWrite(ledPin,HIGH);//turn the led on
-  }
+    digitalWrite(TiltLeft,HIGH);//turn the led on
+  }*/
 }
